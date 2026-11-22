@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Природни зони в Европа</title>
+  <link rel="stylesheet" href="lib/ol.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="title">
+      <h1>Природни зони в Европа</h1>
+      <p>Кликнете върху зона, за да видите климата, почвите, растенията и животните ѝ.</p>
+    </div>
+    <div class="basemap" role="group" aria-label="Подложка на картата">
+      <button type="button" data-base="none" class="is-active" aria-pressed="true">Без релеф</button>
+      <button type="button" data-base="relief" aria-pressed="false">С релеф</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <div id="map" class="map" aria-label="Карта на природните зони"></div>
+    <aside id="panel" class="panel" aria-live="polite"></aside>
+  </main>
+
+  <div id="tooltip" class="tooltip" hidden></div>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" data-action="close-modal" aria-label="Затвори">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="lib/ol.js"></script>
+  <script src="data/zones-geo.js"></script>
+  <script src="data/base-geo.js"></script>
+  <script src="data/mask-geo.js"></script>
+  <script src="data/content.js"></script>
+  <script src="data/photos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
